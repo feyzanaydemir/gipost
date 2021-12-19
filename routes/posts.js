@@ -7,7 +7,6 @@ router.put('/:id', post_controller.updatePost);
 router.delete('/:id', post_controller.deletePost);
 router.put('/:id/likes', post_controller.likePost);
 router.put('/:id/dislikes', post_controller.dislikePost);
-router.get('/feed/:userId', post_controller.readFeed);
-router.get('/profile/:username', post_controller.readHistory);
+router.get('/:id/comments', post_controller.readComments);
 
 module.exports = router;

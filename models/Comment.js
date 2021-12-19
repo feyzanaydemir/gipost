@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
-const PostSchema = new mongoose.Schema(
+const CommentSchema = new mongoose.Schema(
   {
-    userId: {
-      type: String,
-      required: true,
-    },
     postId: {
       type: String,
       required: true,
     },
-    username: {
+    authorId: {
+      type: String,
+      required: true,
+    },
+    authorName: {
       type: String,
       required: true,
     },
@@ -31,4 +31,6 @@ const PostSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Comment', PostSchema);
+CommentSchema.index({ authorId: 1, createdAt: -1 });
+
+module.exports = mongoose.model('Comment', CommentSchema);

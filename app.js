@@ -9,9 +9,9 @@ const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
-const multer = require('multer');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const filesRoute = require('./routes/files');
 const authRoute = require('./routes/auth');
 const usersRoute = require('./routes/users');
 const postsRoute = require('./routes/posts');
@@ -25,7 +25,9 @@ mongoose
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })
-  .then(() => console.log('Connected to database.'));
+  .then(() => {
+    console.log('Connected to database.');
+  });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error.'));
@@ -69,18 +71,29 @@ passport.deserializeUser(function (id, done) {
 });
 
 // Middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: ['https://gipost.herokuapp.com', 'http://localhost:8000'],
+  })
+);
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
-app.use(express.static(path.join(__dirname, './client/build')));
-app.use(express.json());
+if (process.env.MODE === 'prod') {
+  app.use(express.static(path.join(__dirname, './client/build')));
+}
+app.use(express.json({ limit: '50mb' }));
 app.use(cookieParser());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ limit: '50mb', extended: false }));
 app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        'script-src': ["'self'", "'unsafe-inline'", 'example.com'],
+        'img-src': ["'self'", 'data:', 'https://gipost.herokuapp.com'],
+        'script-src': [
+          "'self'",
+          "'unsafe-inline'",
+          'https://gipost.herokuapp.com',
+        ],
       },
     },
   })
@@ -99,33 +112,16 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(morgan('common'));
+app.use('/api/files', filesRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/users', usersRoute);
 app.use('/api/posts', postsRoute);
 app.use('/api/comments', commentsRoute);
 
-// Multer
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'public/images');
-  },
-  filename: (req, file, cb) => {
-    cb(null, req.body.name);
-  },
-});
-
-const files = multer({ storage: storage });
-
-app.post('/api/files', files.single('file'), (req, res) => {
-  try {
-    res.status(200).json('File uploaded successfully.');
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
-});
+if (process.env.MODE === 'prod') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+  });
+}
 
 app.listen(process.env.PORT || 8000, () => console.log('Server running.'));
