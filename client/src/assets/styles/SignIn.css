@@ -1,0 +1,185 @@
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  flex: 1;
+  padding: 1rem;
+  padding-top: min(2vh, 2rem);
+  font-family: 'Montserrat-Bold';
+  background: rgb(18, 18, 18);
+}
+
+.sign-in h1,
+.sign-in h2 {
+  width: fit-content;
+  border: none;
+  margin-bottom: min(5vh, 20px);
+  font-size: calc(13px + 0.5vw);
+  color: white;
+  background: rgb(18, 18, 18);
+}
+
+.sign-in h1 {
+  padding: 0 5vw;
+  margin-bottom: 1rem;
+  font-size: calc(30px + 0.5vw);
+  font-family: 'Montserrat-ExtraBold';
+}
+
+.sign-in-banner {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+  max-height: 15px;
+  border-top: solid 3px rgb(148, 56, 255);
+  border-bottom: solid 3px rgb(148, 56, 255);
+  margin-top: 0.5rem;
+  background-image: url('../images/banner.gif');
+  background-size: cover;
+}
+
+.sign-in-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: fit-content;
+  text-align: center;
+  padding: 0 2vw;
+  background: transparent;
+  z-index: 1;
+}
+
+.sign-in form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  width: 95%;
+  max-width: 300px;
+  max-height: 550px;
+  padding: 1rem 0;
+  border-radius: 5px;
+  background-color: rgb(232, 255, 243);
+  border: solid 3px rgb(148, 56, 255);
+  font-size: calc(11px + 0.5vw);
+}
+
+.sign-in label {
+  font-weight: bold;
+  font-weight: bolder;
+  padding-bottom: 0.25rem;
+  border-bottom: solid 2px rgb(175, 207, 191);
+  width: 85%;
+  text-align: center;
+}
+
+.sign-in input {
+  border: solid 2px rgb(175, 207, 191);
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  width: 85%;
+}
+
+.sign-in input:focus {
+  border: solid 2px rgb(97, 114, 105);
+}
+
+.sign-in span {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.sign-in button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: calc(11px + 0.5vw);
+  white-space: nowrap;
+  color: white;
+  background-color: rgb(148, 56, 255);
+  background: linear-gradient(
+    -135deg,
+    rgb(193, 0, 231) 0,
+    rgb(148, 56, 255) 100%
+  );
+  cursor: pointer;
+  text-shadow: 0 0 2px black;
+  width: 80%;
+}
+
+.sign-in button:hover {
+  background: linear-gradient(
+    -135deg,
+    rgb(222, 55, 255) 0,
+    rgb(180, 114, 255) 100%
+  );
+}
+
+.sign-in a {
+  width: 100%;
+  text-align: center;
+}
+
+.sign-in a button {
+  background: linear-gradient(
+    -135deg,
+    rgb(0, 231, 149) 0,
+    rgb(0, 187, 221) 100%
+  );
+}
+
+.sign-in a button:hover {
+  background: linear-gradient(
+    -135deg,
+    rgb(50, 255, 183) 0,
+    rgb(46, 222, 253) 100%
+  );
+}
+
+.sign-in-validation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+  color: crimson;
+  font-weight: bold;
+}
+
+.sign-in-validation li {
+  padding: 2% 5%;
+  width: 100%;
+  border-radius: 5px;
+  font-size: calc(10px + 0.5vw);
+  background-color: white;
+}
+
+@media (min-width: 720px) {
+  .sign-in h1 {
+    font-size: 40px;
+  }
+
+  .sign-in h2 {
+    font-size: 18px;
+  }
+
+  .sign-in form {
+    max-width: 350px;
+  }
+
+  .sign-in-validation li,
+  .sign-in label,
+  .sign-in span,
+  .sign-in button,
+  .sign-in input {
+    font-size: 14px;
+  }
+}
