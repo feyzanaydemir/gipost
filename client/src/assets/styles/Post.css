@@ -1,0 +1,259 @@
+.post {
+  width: 100%;
+  max-width: 350px;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+  background-color: rgb(227, 250, 220);
+}
+
+.post-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: 'Montserrat';
+  text-align: center;
+}
+
+.post-top div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20%;
+  width: fit-content;
+  font-size: calc(12px + 0.5vw);
+}
+
+.post-top h2 {
+  font-size: calc(12px + 0.5vw);
+  padding: 0.5rem;
+}
+
+.post-top a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: fit-content;
+}
+
+.post-top img {
+  width: 4em;
+  height: 4em;
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border: solid 2px rgb(148, 56, 255);
+}
+
+.post-top h1 {
+  width: fit-content;
+  margin-top: 5%;
+  color: black;
+  font-family: 'Montserrat-Bold';
+}
+
+.post-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2vh;
+  font-size: calc(12px + 0.5vw);
+  text-align: left;
+}
+
+.post-center span {
+  margin-top: 2vh;
+  line-height: 1.2em;
+  width: 100%;
+  overflow: hidden;
+}
+
+.post-center img,
+.post-center video {
+  margin-top: 2vh;
+  width: auto;
+  height: auto;
+  max-height: 300px;
+  max-width: 100%;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.post-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-bottom div {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.post-bottom span {
+  font-size: calc(12px + 0.5vw);
+  text-align: center;
+  width: 1.5rem;
+  font-family: 'Montserrat-Bold';
+}
+
+.post-bottom button {
+  padding: 2% 4%;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Montserrat-Bold';
+  font-size: calc(10px + 0.5vw);
+  white-space: nowrap;
+  color: white;
+  background: linear-gradient(
+    -135deg,
+    rgb(0, 231, 149) 0,
+    rgb(0, 187, 221) 100%
+  );
+  text-shadow: 0 0 2px black;
+  cursor: pointer;
+}
+
+.post-bottom button:hover {
+  background: linear-gradient(
+    -135deg,
+    rgb(50, 255, 183) 0,
+    rgb(46, 222, 253) 100%
+  );
+}
+
+.new-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.new-comment textarea {
+  width: 100%;
+  padding: 2% 3%;
+  border: none;
+  border-radius: 5px;
+  font-size: calc(12px + 0.5vw);
+  resize: none;
+  outline: none;
+}
+
+.new-comment button {
+  padding: 2.5% 2% 1% 2.5%;
+  border: none;
+  border-radius: 50%;
+  margin: 1vh 0;
+  color: white;
+  background: linear-gradient(
+    -135deg,
+    rgb(193, 0, 231) 0,
+    rgb(148, 56, 255) 100%
+  );
+  cursor: pointer;
+  min-width: 15px !important;
+  min-height: 15px !important;
+}
+
+.new-comment button:hover {
+  background: linear-gradient(
+    -135deg,
+    rgb(222, 55, 255) 0,
+    rgb(180, 114, 255) 100%
+  );
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1vh;
+}
+
+@media (min-width: 800px) {
+  .profile .post button {
+    margin-right: 0;
+  }
+
+  .profile .new-comment button {
+    margin-right: 1%;
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .post {
+    display: inline-block;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .post-top svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .post-top h2 {
+    font-size: 15px;
+  }
+
+  .post-center img {
+    width: 100%;
+    max-height: 350px;
+    max-width: 350px;
+    margin-top: 2vh;
+  }
+
+  .post-bottom div {
+    width: fit-content;
+  }
+
+  .post-bottom img {
+    cursor: pointer;
+  }
+
+  .post-bottom div span {
+    justify-content: space-evenly;
+    padding: 0;
+  }
+
+  .post-bottom button {
+    font-size: 13px;
+    width: 40%;
+  }
+
+  .new-comment {
+    flex-direction: row;
+    gap: 2vw;
+  }
+
+  .new-comment {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .new-comment textarea {
+    width: 75%;
+  }
+
+  .new-comment button {
+    padding: 3% 3% 2.5% 4%;
+    margin-right: 5%;
+  }
+
+  .comments {
+    margin-top: 2vh;
+  }
+
+  .post-top div,
+  .post-center span,
+  .post-bottom span,
+  .new-comment textarea {
+    font-size: 16px;
+  }
+}
