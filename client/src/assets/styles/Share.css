@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+.share {
+  width: 100%;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  max-width: 350px;
+  background-color: rgb(151, 255, 246);
+}
+
+.share-top {
+  display: flex;
+  align-items: center;
+}
+
+.share-top img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  display: none;
+}
+
+.share-top textarea {
+  font-size: calc(12px + 0.5vw);
+  border: none;
+  border-radius: 10px;
+  padding: 2% 5%;
+  width: 100%;
+  resize: none;
+}
+
+.share-top textarea:focus {
+  outline: none;
+}
+
+.share-wrapper hr {
+  margin: 0.5rem;
+}
+
+.share-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: rgb(151, 255, 246);
+}
+
+.share-bottom button {
+  background-color: white;
+  font-size: calc(12px + 0.5vw);
+  padding: 3%;
+  border-radius: 5px;
+  width: fit-content;
+
+  background: linear-gradient(
+    -135deg,
+    rgb(193, 0, 231) 0,
+    rgb(148, 56, 255) 100%
+  );
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.share-bottom button:hover {
+  background: linear-gradient(
+    -135deg,
+    rgb(222, 55, 255) 0,
+    rgb(180, 114, 255) 100%
+  );
+}
+
+.share-options {
+  font-size: calc(12px + 0.5vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 5%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.share-options label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.share-options-icon {
+  margin-right: 0.25rem;
+}
+
+.file-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3%;
+}
+
+.file-preview img,
+.file-preview video {
+  width: 80%;
+  height: 80%;
+  height: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+@media (min-width: 800px) {
+  .share {
+    margin: auto;
+  }
+
+  .share-options {
+    font-size: 15px;
+  }
+
+  .share textarea {
+    font-size: 16px !important;
+  }
+
+  .share-bottom button {
+    padding: 0.75rem !important;
+    font-size: 16px !important;
+  }
+}
