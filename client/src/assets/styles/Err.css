@@ -1,0 +1,55 @@
+.err {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+  margin-top: 8em;
+  font-family: 'Montserrat-ExtraBold';
+  color: white;
+  cursor: default;
+}
+
+.err div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.err h1 {
+  color: rgb(148, 56, 255);
+  font-size: calc(40px + 0.5vw);
+}
+
+.err h2 {
+  font-size: calc(16px + 0.5vw);
+}
+
+.err h3 {
+  width: 80%;
+  max-width: 475px;
+  text-align: center;
+  font-size: calc(12px + 0.5vw);
+  font-family: 'Montserrat-Bold';
+}
+
+.err img {
+  height: 100%;
+  width: 100%;
+  max-width: 30px;
+  max-height: 30px;
+  aspect-ratio: 1 / 1;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 800px) {
+  .err {
+    width: 100%;
+    padding: 0 10% 0 0;
+    margin-top: 15vh;
+  }
+
+  .err img {
+    height: 60%;
+    width: 60%;
+  }
+}
