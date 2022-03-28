@@ -1,0 +1,106 @@
+.search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem 1rem 5rem 1rem;
+  background-color: rgb(37, 37, 37);
+}
+
+.results {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 1rem;
+  gap: 1rem;
+}
+
+.suggestions a div,
+.results a div {
+  padding: 0.25rem;
+  min-width: 100px;
+  width: 20vw;
+  aspect-ratio: 1 / 1;
+  max-width: 150px;
+  background-color: rgb(227, 250, 220);
+  border: solid 3px rgb(148, 56, 255);
+}
+
+.suggestion {
+  display: flex;
+  background-color: rgb(63, 63, 63);
+  border: solid 1px lightgrey;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 1rem;
+  padding: 5% 0;
+}
+
+.search h2,
+.search h3 {
+  color: white;
+  font-size: calc(13px + 0.5vw);
+  width: fit-content;
+  font-family: 'Montserrat-Bold';
+}
+
+.suggestion span {
+  font-size: calc(12px + 0.5vw);
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px;
+  padding: 0.25rem 0.5rem;
+
+  background: linear-gradient(
+    -135deg,
+    rgb(193, 0, 231) 0,
+    rgb(148, 56, 255) 100%
+  );
+}
+
+.results span:hover,
+.suggestions span:hover {
+  background: linear-gradient(
+    -135deg,
+    rgb(222, 55, 255) 0,
+    rgb(180, 114, 255) 100%
+  );
+}
+
+.search img {
+  height: 70%;
+  width: 70%;
+  border: solid 2px white;
+  max-height: 100px;
+  max-width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: solid 3px rgb(148, 56, 255);
+  aspect-ratio: 1 / 1;
+}
+
+.suggestion img {
+  border: solid 3px rgb(148, 56, 255);
+}
+
+@media (min-width: 800px) {
+  .suggestion span {
+    font-size: 15px !important;
+  }
+
+  .search h2,
+  .search div h3 {
+    font-size: 20px !important;
+  }
+}
