@@ -77,9 +77,7 @@ app.use(
   })
 );
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
-if (process.env.MODE === 'prod') {
-  app.use(express.static(path.join(__dirname, './client/build')));
-}
+app.use(express.static(path.join(__dirname, './client/build')));
 app.use(express.json({ limit: '50mb' }));
 app.use(cookieParser());
 app.use(express.urlencoded({ limit: '50mb', extended: false }));
@@ -114,11 +112,9 @@ app.use('/api/users', usersRoute);
 app.use('/api/posts', postsRoute);
 app.use('/api/comments', commentsRoute);
 
-if (process.env.MODE === 'prod') {
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build', 'index.html'));
-  });
-}
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+});
 
 app.listen(process.env.PORT || 8000, () =>
   console.log(`Server running on port ${process.env.PORT || 8000}.`)
