@@ -1,21 +1,16 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useHistory } from 'react-router';
 import { Context } from '../context/Context';
-import {
-  updateDescription,
-  updateImage,
-  followOrUnfollow,
-} from '../apiCalls/userCalls';
+import { updateImage, followOrUnfollow } from '../apiCalls/userCalls';
 import Feed from './Feed';
 import axios from 'axios';
-import { Add, Remove, Edit, Done } from '@mui/icons-material';
+import { Add, Remove, Edit } from '@mui/icons-material';
 import defaultImage from '../assets/images/default-image.png';
 import '../assets/styles/Profile.css';
 
 function Profile() {
   const { user: currentUser, dispatch } = useContext(Context);
   const [user, setUser] = useState({});
-  const [editDescription, setEditDescription] = useState(false);
   const [file, setFile] = useState(null);
   const username = useParams().username;
   const history = useHistory();
@@ -48,7 +43,8 @@ function Profile() {
             src={user?.image ? user.image : defaultImage}
             alt="User profile image."
           ></img>
-          {username === currentUser.username ? (
+          {username === currentUser.username &&
+          currentUser.username !== 'Guest' ? (
             <label htmlFor="profile-picture">
               <span>
                 <Edit />
@@ -73,6 +69,7 @@ function Profile() {
             </div>
             {user !== {} && username !== currentUser.username && (
               <button
+                disabled={currentUser.username === 'Guest'}
                 onClick={() => {
                   followOrUnfollow(currentUser, user, dispatch);
                 }}

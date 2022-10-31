@@ -56,7 +56,7 @@ function CommentSection({
       {showComments.clicked ? (
         <div className="new-comment">
           <textarea
-            placeholder="Say something nice."
+            placeholder="Add a comment..."
             cols="40"
             rows="3"
             autoComplete="off"

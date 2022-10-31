@@ -43,9 +43,7 @@ function Share({ posts, setPosts }) {
         <textarea
           cols="40"
           rows="3"
-          placeholder={
-            'Hi ' + user.username + ', share anything you want on Gipost.'
-          }
+          placeholder={'Hi ' + user.username + ", let's share some art."}
           ref={text}
         ></textarea>
       </div>

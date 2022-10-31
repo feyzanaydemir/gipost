@@ -16,7 +16,7 @@ header {
   align-items: center;
   gap: 1.5vh;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 }
 
 .header-container-bottom {
@@ -45,14 +45,14 @@ header h2 {
   width: fit-content;
   min-width: 60%;
   overflow: hidden;
+  margin-right: 1.5rem;
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: nowrap;
-  width: 30%;
   color: white;
 }
 
@@ -61,7 +61,7 @@ header ul {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  gap: 1rem;
+  gap: min(1rem, 2%);
   list-style: none;
   text-align: center;
   font-family: 'Montserrat-Bold';
@@ -90,6 +90,7 @@ header a button {
     top: 0;
     justify-content: center;
     gap: 1vw;
+    padding: 1rem;
   }
 
   .header-container {

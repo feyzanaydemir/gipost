@@ -159,10 +159,16 @@ exports.readFeed = async (req, res) => {
       .lean();
 
     const [userPosts, feed] = await Promise.all([
-      Post.find({ authorId: req.params.id }).limit(20).lean(),
+      Post.find({ authorId: req.params.id })
+        .limit(10)
+        .sort({ createdAt: -1 })
+        .lean(),
       await Promise.all(
         currentUser.following.map((followingId) => {
-          return Post.find({ authorId: followingId }).limit(20).lean();
+          return Post.find({ authorId: followingId })
+            .limit(10)
+            .sort({ createdAt: -1 })
+            .lean();
         })
       ),
     ]);
@@ -176,8 +182,8 @@ exports.readFeed = async (req, res) => {
 exports.readProfile = async (req, res) => {
   try {
     const profilePosts = await Post.find({ authorName: req.params.username })
-      .sort({ createdAt: -1 })
       .limit(20)
+      .sort({ createdAt: -1 })
       .lean();
 
     res.status(201).json(profilePosts);

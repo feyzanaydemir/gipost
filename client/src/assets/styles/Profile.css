@@ -139,6 +139,13 @@
   background: rgb(114, 114, 114);
 }
 
+.profile button[disabled],
+.profile button:disabled,
+.profile button[disabled] svg {
+  background: lightgray !important;
+  cursor: not-allowed !important;
+}
+
 @media (min-width: 600px) {
   .profile {
     margin: 0;
@@ -161,6 +168,10 @@
 
   .profile-details {
     padding: 0;
+  }
+
+  .profile-details button {
+    font-size: 14px;
   }
 
   .profile-main div {

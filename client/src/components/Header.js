@@ -4,7 +4,6 @@ import { Context } from '../context/Context';
 import { signOut } from '../apiCalls/authCalls';
 import Searchbar from './Searchbar';
 import { ExitToApp, GitHub } from '@mui/icons-material';
-import defaultImage from '../assets/images/default-image.png';
 import {
   Home,
   Person,
