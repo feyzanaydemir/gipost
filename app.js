@@ -73,7 +73,7 @@ passport.deserializeUser(function (id, done) {
 // Middlewares
 app.use(
   cors({
-    origin: ['https://gipost.herokuapp.com', 'http://localhost:8000'],
+    origin: [process.env.ORIGIN, 'http://localhost:8000'],
   })
 );
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
@@ -88,12 +88,8 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        'img-src': ["'self'", 'data:', 'https://gipost.herokuapp.com'],
-        'script-src': [
-          "'self'",
-          "'unsafe-inline'",
-          'https://gipost.herokuapp.com',
-        ],
+        'img-src': ["'self'", 'data:', process.env.ORIGIN],
+        'script-src': ["'self'", "'unsafe-inline'", process.env.ORIGIN],
       },
     },
   })
@@ -124,4 +120,6 @@ if (process.env.MODE === 'prod') {
   });
 }
 
-app.listen(process.env.PORT || 8000, () => console.log('Server running.'));
+app.listen(process.env.PORT || 8000, () =>
+  console.log(`Server running on port ${process.env.PORT || 8000}.`)
+);

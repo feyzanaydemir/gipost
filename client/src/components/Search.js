@@ -54,13 +54,17 @@ function Search() {
     <>
       {isFetching ? (
         <div className="search">
-          <LinearProgress color="secondary" className="loading" />
+          <LinearProgress color="primary" className="loading" />
         </div>
       ) : (
         <div className="search">
-          <h2>
-            {results.length} RESULTS FOR: {searchWord}
-          </h2>
+          {results.length == 1 ? (
+            <h2>1 RESULT FOR: {searchWord}</h2>
+          ) : (
+            <h2>
+              {results.length} RESULTS FOR: {searchWord}
+            </h2>
+          )}
           {results.length > 0 ? (
             <div className="results">
               {results.map((user) => (

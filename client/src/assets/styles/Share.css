@@ -8,7 +8,7 @@
   padding: 1rem;
   margin-bottom: 1rem;
   max-width: 350px;
-  background-color: rgb(151, 255, 246);
+  background-color: rgb(161, 227, 253);
 }
 
 .share-top {
@@ -48,32 +48,24 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background-color: rgb(151, 255, 246);
+  background-color: rgb(161, 227, 253);
 }
 
 .share-bottom button {
   background-color: white;
   font-size: calc(12px + 0.5vw);
-  padding: 3%;
+  padding: 2.5%;
   border-radius: 5px;
   width: fit-content;
-
-  background: linear-gradient(
-    -135deg,
-    rgb(193, 0, 231) 0,
-    rgb(148, 56, 255) 100%
-  );
+  border-color: transparent;
+  background: black;
   color: white;
   font-weight: bolder;
   cursor: pointer;
 }
 
 .share-bottom button:hover {
-  background: linear-gradient(
-    -135deg,
-    rgb(222, 55, 255) 0,
-    rgb(180, 114, 255) 100%
-  );
+  background: rgb(114, 114, 114);
 }
 
 .share-options {
@@ -113,21 +105,21 @@
   max-height: 300px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .share {
     margin: auto;
   }
 
   .share-options {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .share textarea {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
 
   .share-bottom button {
-    padding: 0.75rem !important;
-    font-size: 16px !important;
+    padding: 0.5rem !important;
+    font-size: 14px !important;
   }
 }

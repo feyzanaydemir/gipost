@@ -32,19 +32,23 @@
   aspect-ratio: 1 / 1;
   max-width: 150px;
   background-color: rgb(227, 250, 220);
-  border: solid 3px rgb(148, 56, 255);
+  border: solid 3px black;
 }
 
 .suggestion {
   display: flex;
-  background-color: rgb(63, 63, 63);
-  border: solid 1px lightgrey;
+  background-color: rgb(227, 250, 220);
+  border: solid 1px black;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   gap: 1rem;
   padding: 5% 0;
+}
+
+.results a div:hover, .suggestion:hover {
+  background-color: rgb(211, 255, 198);
 }
 
 .search h2,
@@ -59,24 +63,11 @@
   font-size: calc(12px + 0.5vw);
   color: white;
   font-weight: bolder;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 0.25rem 0.5rem;
-
-  background: linear-gradient(
-    -135deg,
-    rgb(193, 0, 231) 0,
-    rgb(148, 56, 255) 100%
-  );
+  background: black;
 }
 
-.results span:hover,
-.suggestions span:hover {
-  background: linear-gradient(
-    -135deg,
-    rgb(222, 55, 255) 0,
-    rgb(180, 114, 255) 100%
-  );
-}
 
 .search img {
   height: 70%;
@@ -86,21 +77,21 @@
   max-width: 100px;
   border-radius: 50%;
   object-fit: cover;
-  border: solid 3px rgb(148, 56, 255);
+  border: solid 3px black;
   aspect-ratio: 1 / 1;
 }
 
 .suggestion img {
-  border: solid 3px rgb(148, 56, 255);
+  border: solid 3px black;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .suggestion span {
-    font-size: 15px !important;
+    font-size: 14px !important;
   }
 
   .search h2,
   .search div h3 {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
 }

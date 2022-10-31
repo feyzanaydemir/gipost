@@ -88,46 +88,6 @@ function Profile() {
               </button>
             )}
           </div>
-          {username === currentUser?.username ? (
-            !editDescription ? (
-              <div className="profile-description">
-                <p>{user.description}</p>
-                <button onClick={() => setEditDescription(!editDescription)}>
-                  <Edit />
-                </button>
-              </div>
-            ) : (
-              <div className="profile-description">
-                <textarea
-                  rows="5"
-                  maxLength="300"
-                  defaultValue={user.description}
-                ></textarea>
-                <button
-                  onClick={() => {
-                    updateDescription(
-                      currentUser,
-                      document.querySelector('textarea').value,
-                      dispatch
-                    );
-
-                    setUser({
-                      ...user,
-                      description: document.querySelector('textarea').value,
-                    });
-
-                    setEditDescription(!editDescription);
-                  }}
-                >
-                  <Done />
-                </button>
-              </div>
-            )
-          ) : (
-            <div className="profile-description">
-              <p>{user.description}</p>
-            </div>
-          )}
         </div>
       </div>
       <Feed username={username} />

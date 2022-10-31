@@ -3,7 +3,6 @@ import { getComments, getNewComment } from '../apiCalls/commentCalls';
 import { newComment } from '../apiCalls/commentCalls';
 import { Context } from '../context/Context';
 import Comment from './Comment';
-import SendIcon from '@mui/icons-material/Send';
 
 function CommentSection({
   post,
@@ -73,7 +72,7 @@ function CommentSection({
               }
             }}
           >
-            <SendIcon />
+            Reply
           </button>
         </div>
       ) : null}

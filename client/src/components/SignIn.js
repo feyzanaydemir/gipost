@@ -18,13 +18,7 @@ function SignIn() {
 
     const errors =
       type === 'guest'
-        ? await signIn(
-            {
-              email: process.env.REACT_APP_GUEST_EMAIL,
-              password: process.env.REACT_APP_GUEST_PASSWORD,
-            },
-            dispatch
-          )
+        ? await signIn({ isGuest: true }, dispatch)
         : await signIn(
             { email: email.current.value, password: password.current.value },
             dispatch
@@ -42,7 +36,9 @@ function SignIn() {
       <div className="sign-in-banner"></div>
       <div className="sign-in-left">
         <h1>GIPOST</h1>
-        <h2>Keep a moment from running away</h2>
+        <h2>
+          “Art washes away from the soul the dust of everyday life” ~ Picasso
+        </h2>
       </div>
       <form onSubmit={(e) => handleSubmit('user', e)} noValidate>
         <label htmlFor="email">EMAIL</label>
@@ -71,7 +67,7 @@ function SignIn() {
             : null}
         </ul>
         <button type="submit">Sign In</button>
-        {isFetching ? <CircularProgress color="secondary" /> : null}
+        {isFetching ? <CircularProgress color="primary" /> : null}
         <span>Don't have an account?</span>
         <Link to="/signup">
           <button className="sign-up-button" type="button">

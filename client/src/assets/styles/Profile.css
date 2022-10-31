@@ -2,7 +2,7 @@
   background-color: rgb(37, 37, 37);
   height: min(80vh, 800px);
   width: 100%;
-  margin: 2rem 0 1.25rem 0;
+  margin: 2rem 0;
   overflow: visible;
 }
 
@@ -12,8 +12,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 1rem;
+  padding: 1rem 1rem 0 1rem;
   min-width: 260px;
+  margin: 0;
   font-size: calc(13px + 0.5vw);
 }
 
@@ -24,7 +25,7 @@
 .profile-container img {
   width: 90%;
   height: 90%;
-  border: solid 3px rgb(148, 56, 255);
+  border: solid 3px black;
   max-height: 120px;
   max-width: 120px;
   border-radius: 50%;
@@ -42,15 +43,10 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 500px;
+  width: 80%;
+  max-width: 350px;
   margin-top: 1rem;
-  border: solid 2px rgb(148, 56, 255);
-  background: linear-gradient(
-    135deg,
-    rgb(255, 255, 255) 0,
-    rgb(190, 255, 255) 100%
-  );
+  background: rgb(197, 239, 255);
 }
 
 .profile-details {
@@ -60,8 +56,9 @@
   align-items: center;
   display: flex;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1rem;
   background: transparent;
+  max-height: 100%;
 }
 
 .profile-username {
@@ -84,15 +81,11 @@
   justify-content: center;
   border-radius: 5px;
   padding: 0.25rem 0.5rem;
-  gap: 0.5rem;
+  gap: 0rem;
   text-align: center;
   width: fit-content;
   color: white;
-  background: linear-gradient(
-    -135deg,
-    rgb(0, 231, 149) 0,
-    rgb(0, 187, 221) 100%
-  );
+  background: black;
   font-weight: bolder;
   cursor: pointer;
   font-family: 'Montserrat-Bold';
@@ -108,11 +101,7 @@
 }
 
 .profile-details button:hover {
-  background: linear-gradient(
-    -135deg,
-    rgb(50, 255, 183) 0,
-    rgb(46, 222, 253) 100%
-  );
+  background: rgb(114, 114, 114);
 }
 
 .profile-description {
@@ -120,8 +109,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background: transparent;
   line-height: 1.2em;
+  width: 80%;
+  max-height: fit-content;
 }
 
 .profile-description p {
@@ -130,42 +122,41 @@
 }
 
 .profile-description textarea {
-  font-size: calc(15px + 0.5vw);
+  font-size: calc(14px + 0.5vw);
+  width: 100%;
   padding: 2%;
   font-family: 'Montserrat';
-  margin: 0 5% 5% 5%;
+  margin: 0 5%;
   resize: none;
 }
 
 .profile-description button {
   float: right;
-  margin: 0 5% 5% 0;
+  margin: 0;
 }
 
 .profile-details button:hover {
-  background: linear-gradient(
-    -135deg,
-    rgb(50, 255, 183) 0,
-    rgb(46, 222, 253) 100%
-  );
+  background: rgb(114, 114, 114);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .profile {
-    margin: 1.25rem;
+    margin: 0;
+  }
+
+  .profile-username {
+    font-size: 18px;
   }
 
   .profile-container {
-    columns: 350px;
     overflow: hidden;
     font-size: 14px;
-    padding: 0;
-    padding-top: 5vh;
-    padding-right: 10%;
+    padding: 2rem 0 0 0;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5%;
   }
 
   .profile-details {
@@ -185,32 +176,8 @@
 
   .profile-main {
     display: inline-flex !important;
-    max-height: 230px;
-    min-width: 350px;
-    max-width: 700px;
     padding: 1rem 0 !important;
     flex: 2;
     margin: 0;
-  }
-
-  .profile-main p {
-    font-size: 16px;
-    overflow-y: auto;
-    margin-top: 0.75rem;
-  }
-
-  .profile-main textarea {
-    min-width: 50% !important;
-    height: 80px;
-    font-size: 15px;
-    margin: 0.5rem 1rem;
-  }
-
-  .profile-main button {
-    margin: 0 !important;
-  }
-
-  .profile-details button {
-    font-size: 13px !important;
   }
 }

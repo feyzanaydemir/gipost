@@ -65,7 +65,7 @@ function People() {
     <>
       {isFetching ? (
         <div className="people">
-          <LinearProgress color="secondary" />
+          <LinearProgress color="primary" />
         </div>
       ) : (
         <div className="people">

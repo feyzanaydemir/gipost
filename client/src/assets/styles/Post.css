@@ -46,7 +46,7 @@
   border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1 / 1;
-  border: solid 2px rgb(148, 56, 255);
+  border: solid 2px black;
 }
 
 .post-top h1 {
@@ -111,21 +111,12 @@
   font-size: calc(10px + 0.5vw);
   white-space: nowrap;
   color: white;
-  background: linear-gradient(
-    -135deg,
-    rgb(0, 231, 149) 0,
-    rgb(0, 187, 221) 100%
-  );
-  text-shadow: 0 0 2px black;
+  background: black;
   cursor: pointer;
 }
 
-.post-bottom button:hover {
-  background: linear-gradient(
-    -135deg,
-    rgb(50, 255, 183) 0,
-    rgb(46, 222, 253) 100%
-  );
+.post-bottom button:hover{
+  background: rgb(91, 91, 91);
 }
 
 .new-comment {
@@ -147,27 +138,22 @@
 }
 
 .new-comment button {
-  padding: 2.5% 2% 1% 2.5%;
+  margin: 0.5rem 0;
+  min-width: 10px !important;
+  min-height: 10px !important;
+  padding: 2% 4%;
   border: none;
-  border-radius: 50%;
-  margin: 1vh 0;
+  border-radius: 5px;
+  font-family: 'Montserrat-Bold';
+  font-size: calc(10px + 0.5vw);
+  white-space: nowrap;
   color: white;
-  background: linear-gradient(
-    -135deg,
-    rgb(193, 0, 231) 0,
-    rgb(148, 56, 255) 100%
-  );
+  background: black;
   cursor: pointer;
-  min-width: 15px !important;
-  min-height: 15px !important;
 }
 
 .new-comment button:hover {
-  background: linear-gradient(
-    -135deg,
-    rgb(222, 55, 255) 0,
-    rgb(180, 114, 255) 100%
-  );
+  background: rgb(114, 114, 114);
 }
 
 .comments {
@@ -176,7 +162,7 @@
   row-gap: 1vh;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .profile .post button {
     margin-right: 0;
   }
@@ -199,7 +185,7 @@
   }
 
   .post-top h2 {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .post-center img {
@@ -224,7 +210,11 @@
 
   .post-bottom button {
     font-size: 13px;
-    width: 40%;
+    width: 35%;
+  }
+
+  .new-comment button {
+    font-size: 13px;
   }
 
   .new-comment {
@@ -241,19 +231,17 @@
     width: 75%;
   }
 
-  .new-comment button {
-    padding: 3% 3% 2.5% 4%;
-    margin-right: 5%;
-  }
-
   .comments {
     margin-top: 2vh;
   }
 
   .post-top div,
-  .post-center span,
   .post-bottom span,
   .new-comment textarea {
-    font-size: 16px;
+    font-size: 14px;
+  }
+
+  .post-center span {
+    font-size: 15px;
   }
 }

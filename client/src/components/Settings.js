@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Context } from '../context/Context';
 import { updateAccount, deleteAccount } from '../apiCalls/userCalls';
 import axios from 'axios';
-import settingsGif from '../assets/images/settings.gif';
 import '../assets/styles/Settings.css';
 
 function Settings() {
@@ -181,9 +180,6 @@ function Settings() {
           </div>
         ) : null}
       </form>
-      <div className="settings-gif">
-        <img src={settingsGif} alt="Settings gif."></img>
-      </div>
     </div>
   );
 }

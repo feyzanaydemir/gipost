@@ -2,10 +2,7 @@ import axios from 'axios';
 
 export const signIn = async (credentials, dispatch) => {
   try {
-    const currUserRes = await axios.post('/api/auth/', {
-      email: credentials.email,
-      password: credentials.password,
-    });
+    const currUserRes = await axios.post('/api/auth/', credentials);
 
     // Response will be an array of errors
     // if authentication fails

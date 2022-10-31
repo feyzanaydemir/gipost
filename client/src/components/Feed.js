@@ -48,7 +48,7 @@ function Feed({ username }) {
     <>
       {isFetching ? (
         <div className="feed">
-          <LinearProgress color="secondary" className="loading" />
+          <LinearProgress color="primary" className="loading" />
         </div>
       ) : (
         <div className="feed">

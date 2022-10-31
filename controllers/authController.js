@@ -2,10 +2,17 @@ const { validationResult } = require('express-validator');
 const passport = require('passport');
 
 exports.signIn = async (req, res, next) => {
-  const result = validationResult(req);
+  if (!req.body.isGuest) {
+    const result = validationResult(req);
 
-  if (result.errors.length > 0) {
-    return res.json(result.errors);
+    if (result.errors.length > 0) {
+      return res.json(result.errors);
+    }
+  } else {
+    req.body = {
+      email: process.env.GUEST_EMAIL,
+      password: process.env.GUEST_PASSWORD,
+    };
   }
 
   try {

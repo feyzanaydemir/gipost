@@ -61,14 +61,19 @@ input:focus {
   background-color: rgb(37, 37, 37);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .searchbar {
     margin: 0;
+    justify-content: flex-start;
+    gap: 0.5rem;
   }
+
   .searchbar input {
+    min-width: 120px;
+    width: 20vw;
     max-width: 400px;
-    padding: 0.5rem 1rem;
-    font-size: 17px;
+    padding: 0.5rem;
+    font-size: 15px;
   }
 
   .search-result {
@@ -80,5 +85,9 @@ input:focus {
   .search-result span {
     max-height: 45px;
     font-size: 17px;
+  }
+
+  .searchbar {
+    width: fit-content;
   }
 }

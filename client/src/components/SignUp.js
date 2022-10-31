@@ -62,7 +62,9 @@ function SignUp() {
       <div className="sign-up-banner"></div>
       <div className="sign-up-left">
         <h1>GIPOST</h1>
-        <h2>Keep a moment from running away</h2>
+        <h2>
+          “Art washes away from the soul the dust of everyday life” ~ Picasso
+        </h2>
       </div>
       <form onSubmit={handleSubmit} noValidate>
         <label htmlFor="username">USERNAME</label>
@@ -94,7 +96,7 @@ function SignUp() {
         <Validation type="password" />
         <button type="submit">Sign Up</button>
         {isFetching ? (
-          <CircularProgress color="secondary" className="loading" />
+          <CircularProgress color="primary" className="loading" />
         ) : null}
         <span>Already have an account?</span>
         <Link to="/signin">

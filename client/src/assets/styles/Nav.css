@@ -5,7 +5,6 @@
   height: fit-content;
   width: 100%;
   padding: 0.5rem 0;
-  border-top: solid 2px rgb(148, 56, 255);
   background-color: rgb(18, 18, 18);
   font-family: 'Montserrat-Bold';
 }
@@ -38,53 +37,9 @@
   object-fit: cover;
 }
 
-@media (min-width: 800px) {
-  .nav-container {
+@media (min-width: 600px) {
+  .nav-container, .nav {
     width: 300px;
-  }
-
-  .nav {
-    position: fixed;
-    top: min(15vh, 120px);
-    left: 2vw;
-    width: 150px;
-    height: fit-content;
-    padding: 0;
-    border-radius: 5px;
-    border: solid 3px rgb(148, 56, 255);
-    margin: 0 0 0 3vw;
-    background: linear-gradient(
-      -135deg,
-      rgb(0, 255, 234) 0,
-      rgb(177, 243, 177) 100%
-    );
-  }
-
-  .nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem;
-  }
-
-  .nav li {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    border-radius: 10px;
-    background-color: rgb(18, 18, 18);
-  }
-
-  .nav li:hover {
-    background-color: rgb(37, 37, 37);
-  }
-
-  .nav li a {
-    font-size: 15px;
-    padding: 1rem 0.75rem;
-  }
-
-  .nav svg {
-    height: 30px;
-    width: 30px;
+    display: none;
   }
 }

@@ -4,15 +4,15 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1rem 1rem 4rem 1rem;
+  padding: 2rem 1rem 4rem 1rem;
   background-color: rgb(37, 37, 37);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .feed {
     display: block;
     columns: 340px;
-    padding: 2rem 1rem 2rem 0;
+    padding: 2rem 1rem;
     overflow: hidden;
     text-align: center;
   }
